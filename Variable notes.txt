@@ -1,0 +1,4 @@
+Start Infected chance - float
+Infection Rate - float
+Social Distance - float
+Infection Radius - float

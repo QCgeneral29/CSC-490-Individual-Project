@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameModeScript : MonoBehaviour
 {
+    public float StartingInfectedChance = 0.05f;
+    public float InfectionRisk = 0.50f;
+    public float SocialDistance = 3f;
+    public float InfectionRadius = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
