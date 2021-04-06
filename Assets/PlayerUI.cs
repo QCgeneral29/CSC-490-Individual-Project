@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
 
-public class AIController : MonoBehaviour
+public class PlayerUI : MonoBehaviour
 {
     private GameObject gameMode;
     private GameModeScript gameModeScript;
 
-    NavMeshAgent navMeshAgent;
+    public Text currentClass;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.navMeshAgent = this.GetComponent<NavMeshAgent>();
-
         try
         {
             gameMode = GameObject.Find("GameMode");
@@ -30,11 +28,6 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void NextClass()
-    {
-        navMeshAgent.SetDestination(gameModeScript.AskForClassroom().position);
+        currentClass.text = "Current Class: " + gameModeScript.currentClass;
     }
 }
