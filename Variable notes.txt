@@ -1,4 +1,32 @@
 Start Infected chance - float
-Infection Rate - float
+Infection Risk - float
 Social Distance - float
 Infection Radius - float
+
+
+Classroom object
+
+private BoxCollider socialDistanceCollider;
+
+private SphereCollider infectionCollider;
+
+Max avoid distance: 1.5
+Min: 0.5
+0.5
+
+Infection Radius Max: 3.75
+Min: 0
+1.5
+
+Infection Risk Max: 1
+Min: 0
+0.05
+
+Starting infection chance Max: 1
+Min 0
+0.05
+
+
+
+
+

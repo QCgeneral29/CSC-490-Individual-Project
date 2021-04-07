@@ -9,7 +9,7 @@ public class GameModeScript : MonoBehaviour
     public float SocialDistance = 3f;
     public float InfectionRadius = 1.5f;
     public int MaxClasses = 7;
-    public int currentClass = 1;
+    public int currentClass = 0;
 
     public GameObject[] classrooms = new GameObject[7];
 
@@ -40,6 +40,7 @@ public class GameModeScript : MonoBehaviour
 
     public void NextClass()
     {
+        currentClass++;
         shufflePeople();
 
         for (int i = 0; i < classrooms.Length; i++)
