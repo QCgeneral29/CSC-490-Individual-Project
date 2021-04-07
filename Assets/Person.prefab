@@ -62,9 +62,9 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: 49849ba8737050548a8413ad972a52b6, type: 2}
   redMaterial: {fileID: 2100000, guid: 43a074eefc65981469f57204a6d5a6a9, type: 2}
   isInfected: 0
-  socialDistance: 3
+  socialDistance: 1.15
   infectionRisk: 0.5
-  infectionRadius: 1.5
+  infectionRadius: 2
 --- !u!114 &2736714710148148975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1.15
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -141,7 +141,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &4480129439791069470
 NavMeshAgent:

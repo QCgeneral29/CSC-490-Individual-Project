@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public Material greenMaterial;
     public Material redMaterial;
     private MeshRenderer meshRenderer;
-    private BoxCollider socialDistanceCollider;
+    private CapsuleCollider socialDistanceCollider;
     private SphereCollider infectionCollider;
 
     // Inital Variables. Will be changed by gamemode
@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
         }
 
         meshRenderer = this.GetComponent<MeshRenderer>();
-        socialDistanceCollider = this.GetComponent<BoxCollider>();
+        socialDistanceCollider = this.GetComponent<CapsuleCollider>();
         infectionCollider = this.GetComponent<SphereCollider>();
 
         if (gameMode != null)
@@ -53,14 +53,14 @@ public class Health : MonoBehaviour
             this.socialDistance = gameModeScript.SocialDistance;
             this.infectionRadius = gameModeScript.InfectionRadius;
 
-            socialDistanceCollider.size = new Vector3(socialDistance, 2, socialDistance);
+            socialDistanceCollider.radius = socialDistance;
             infectionCollider.radius = infectionRadius;
         }
         else
         {
             // If gamemode is not found, set defaults
             Debug.LogError(this.name + " says GameMode empty not found!");
-            socialDistanceCollider.size = new Vector3(socialDistance, 2, socialDistance);
+            socialDistanceCollider.radius = socialDistance;
         }
 
         
@@ -80,16 +80,19 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Person" && infectOnce)
+        if (other.gameObject.tag == "Person")
         {
-            Health otherHealthScript = other.GetComponent<Health>();
-
-            if (this.isInfected && !otherHealthScript.isInfected)
+            if (infectOnce)
             {
-                infectOnce = false;
-                float infectRoll = Random.Range(1, 100);
-                if (infectRoll < (infectionRisk * 100)) otherHealthScript.isInfected = true;
-                Debug.Log(infectRoll);
+                Health otherHealthScript = other.GetComponent<Health>();
+
+                if (this.isInfected && !otherHealthScript.isInfected)
+                {
+                    infectOnce = false;
+                    float infectRoll = Random.Range(1, 100);
+                    if (infectRoll < (infectionRisk * 100)) otherHealthScript.isInfected = true;
+                    //Debug.Log(infectRoll);
+                }
             }
         }
     }
