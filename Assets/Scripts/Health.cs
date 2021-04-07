@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     public float infectionRisk = 0.50f;
     public float infectionRadius = 3f;
 
+    private bool initalInfect = true;
     private bool infectOnce = true;
 
 
@@ -39,14 +40,23 @@ public class Health : MonoBehaviour
         meshRenderer = this.GetComponent<MeshRenderer>();
         socialDistanceCollider = this.GetComponent<NavMeshAgent>();
         infectionCollider = this.GetComponent<SphereCollider>();
+    }
 
+    // This is called by GameModeScript everytime a new class period starts
+    public void RefreshVariables()
+    {
         if (gameMode != null)
         {
             // Roll to see if this pawn should start infected or not
-            float infectRoll = Random.Range(1,100);
-            if (infectRoll < (gameModeScript.StartingInfectedChance * 100) )
+            if (initalInfect)
             {
-                this.isInfected = true;
+                float infectRoll = Random.Range(1, 100);
+                if (infectRoll < (gameModeScript.StartingInfectedChance * 100))
+                {
+                    this.isInfected = true;
+                }
+
+                this.initalInfect = false;
             }
 
             // Set other variables decided in GameMode
@@ -63,8 +73,6 @@ public class Health : MonoBehaviour
             Debug.LogError(this.name + " says GameMode empty not found!");
             socialDistanceCollider.radius = socialDistance;
         }
-
-        
     }
 
     // Update is called once per frame
@@ -79,6 +87,8 @@ public class Health : MonoBehaviour
         }
     }
 
+    // When touching another Person and also infect, roll to see if other person
+    // becomes infected
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Person")
@@ -98,6 +108,7 @@ public class Health : MonoBehaviour
         }
     }
 
+    // Only one person can roll to be infected at a time
     private void OnTriggerExit(Collider other)
     {
         infectOnce = true;

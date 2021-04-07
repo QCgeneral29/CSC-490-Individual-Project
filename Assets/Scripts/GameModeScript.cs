@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameModeScript : MonoBehaviour
 {
@@ -43,6 +44,11 @@ public class GameModeScript : MonoBehaviour
         currentClass++;
         shufflePeople();
 
+        for (int i = 0; i < people.Length; i++)
+        {
+            people[i].GetComponent<Health>().RefreshVariables();
+        }
+
         for (int i = 0; i < classrooms.Length; i++)
         {
             classrooms[i].GetComponent<Classroom>().EmptySeats();
@@ -69,5 +75,10 @@ public class GameModeScript : MonoBehaviour
             people[k] = people[n];
             people[n] = person;
         }
+    }
+
+    public void Reset()
+    {
+        SceneManager.LoadScene("School");
     }
 }

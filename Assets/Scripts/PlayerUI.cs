@@ -45,5 +45,10 @@ public class PlayerUI : MonoBehaviour
 
         InfectionRadiusText.text = "Infection Radius: " + System.Math.Round(InfectionRadiusSlider.value * 100) / 100;
         SocialDistanceText.text = "Social Distance: " + System.Math.Round(SocialDistanceSlider.value * 100) / 100;
+
+        gameModeScript.InfectionRisk = InfectionRiskSlider.value;
+        gameModeScript.InfectionRadius = InfectionRadiusSlider.value;
+        gameModeScript.StartingInfectedChance = StartingInfectionChanceSlider.value;
+        gameModeScript.SocialDistance = SocialDistanceSlider.value;
     }
 }
