@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Health : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Health : MonoBehaviour
     public Material greenMaterial;
     public Material redMaterial;
     private MeshRenderer meshRenderer;
-    private CapsuleCollider socialDistanceCollider;
+    private NavMeshAgent socialDistanceCollider;
     private SphereCollider infectionCollider;
 
     // Inital Variables. Will be changed by gamemode
@@ -36,7 +37,7 @@ public class Health : MonoBehaviour
         }
 
         meshRenderer = this.GetComponent<MeshRenderer>();
-        socialDistanceCollider = this.GetComponent<CapsuleCollider>();
+        socialDistanceCollider = this.GetComponent<NavMeshAgent>();
         infectionCollider = this.GetComponent<SphereCollider>();
 
         if (gameMode != null)

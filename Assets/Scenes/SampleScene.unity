@@ -760,6 +760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Person (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4480129439791069471, guid: 641763be14bb1804a857d5bf9fed10b3,
+        type: 3}
+      propertyPath: isInfected
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 641763be14bb1804a857d5bf9fed10b3, type: 3}
 --- !u!114 &1230296493 stripped
@@ -1157,6 +1162,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4480129439791069456, guid: 641763be14bb1804a857d5bf9fed10b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480129439791069457, guid: 641763be14bb1804a857d5bf9fed10b3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4480129439791069461, guid: 641763be14bb1804a857d5bf9fed10b3,
         type: 3}
       propertyPath: m_RootOrder
@@ -1165,7 +1180,7 @@ PrefabInstance:
     - target: {fileID: 4480129439791069461, guid: 641763be14bb1804a857d5bf9fed10b3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4480129439791069461, guid: 641763be14bb1804a857d5bf9fed10b3,
         type: 3}
@@ -1175,7 +1190,7 @@ PrefabInstance:
     - target: {fileID: 4480129439791069461, guid: 641763be14bb1804a857d5bf9fed10b3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.18
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 4480129439791069461, guid: 641763be14bb1804a857d5bf9fed10b3,
         type: 3}
@@ -1217,7 +1232,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Person
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4480129439791069470, guid: 641763be14bb1804a857d5bf9fed10b3,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480129439791069471, guid: 641763be14bb1804a857d5bf9fed10b3,
+        type: 3}
+      propertyPath: socialDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4480129439791069456, guid: 641763be14bb1804a857d5bf9fed10b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 641763be14bb1804a857d5bf9fed10b3, type: 3}
 --- !u!1001 &4735682863395993739
 PrefabInstance:
@@ -1284,12 +1310,12 @@ PrefabInstance:
     - target: {fileID: 4735682864321637670, guid: 962a84864b419234a9e863ea9e9e1baf,
         type: 3}
       propertyPath: SocialDistance
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4735682864321637670, guid: 962a84864b419234a9e863ea9e9e1baf,
         type: 3}
       propertyPath: InfectionRadius
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4735682864321637670, guid: 962a84864b419234a9e863ea9e9e1baf,
         type: 3}
