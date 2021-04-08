@@ -26,7 +26,15 @@ Starting infection chance Max: 1
 Min 0
 0.05
 
+Inital chance
+Infection Risk
+Infection Rad
+Social
 
+public Slider InfectionRiskSlider;
+    public Slider InfectionRadiusSlider;
+    public Slider StartingInfectionChanceSlider;
+    public Slider SocialDistanceSlider;
 
 
 
